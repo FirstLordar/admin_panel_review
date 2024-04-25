@@ -4,10 +4,12 @@ const gamesRouter = require('./routers/games');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('./middlewares/cors');
+const connectToDatabase = require('./database/connect');
 
 
 const PORT = 3000;
 const app = express();
+connectToDatabase();
 
 app.use(
   cors,
